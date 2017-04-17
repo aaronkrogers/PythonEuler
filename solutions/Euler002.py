@@ -2,6 +2,11 @@
 
 
 def fibonacci_generator(start=1, end=None):
+    """
+    :param start: int 
+    :param end: int or None
+    :return: int
+    """
     current = start
     last = current
     while True:
@@ -19,6 +24,9 @@ def euler002():
     1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
     By considering the terms in the Fibonacci sequence whose values do not exceed
     four million, find the sum of the even-valued terms.
+    
+    Return solution to projecteuler #2
+    :return: int
     """
     result = 0
     # Filter out only even fibonacci numbers and

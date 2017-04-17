@@ -8,6 +8,9 @@ def euler001():
     we get 3, 5, 6 and 9. The sum of these multiples is 23.
 
     Find the sum of all the multiples of 3 or 5 below 1000.
+    
+    Return solution to projecteuler #1
+    :return: int
     """
     results = set()
     for i in range(0, 1000, 3):

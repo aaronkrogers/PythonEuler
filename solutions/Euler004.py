@@ -5,6 +5,11 @@ import pyprimes
 
 
 def is_palindrome(number):
+    """
+    Return True is number is palindromic
+    :param number: int 
+    :return: bool
+    """
     number = str(number)
     if number == number[::-1]:
         return True
@@ -13,6 +18,11 @@ def is_palindrome(number):
 
 
 def is_acceptable(number):
+    """
+    Return True if 'number' is the product of two 3-digit numbers
+    :param number: int
+    :return: bool
+    """
     prime_factors = pyprimes.factors(number)
 
     for r in range(len(prime_factors)):
@@ -34,6 +44,9 @@ def euler004():
     A palindromic number reads the same both ways. 
     The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
     Find the largest palindrome made from the product of two 3-digit numbers.
+    
+    Return solution to projecteuler #4
+    :return: int
     """
     lower_bound = 100 ** 2
     upper_bound = 999 ** 2
