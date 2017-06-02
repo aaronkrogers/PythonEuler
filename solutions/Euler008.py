@@ -62,9 +62,8 @@ def euler008():
         if new_product > highest_product:
             highest_product = new_product
 
-    print(highest_product)
-    return 0
+    return highest_product
 
 
 if __name__ == "__main__":
-    euler008()
+    print(euler008())
