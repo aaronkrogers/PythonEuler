@@ -27,6 +27,7 @@ def euler011():
 
     for x, y in product(range(grid_size), range(grid_size)):
         round_results = []
+        # TODO: Condense this section
         if x < grid_size-3:
             # Test for down straight
             round_results.append(grid[x:x+4, y])
