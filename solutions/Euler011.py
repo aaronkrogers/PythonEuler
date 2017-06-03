@@ -14,7 +14,7 @@ def euler011():
     """
 
     # Set project directory
-    pd = abspath(dirname(__file__) + '/' + pardir)
+    pd = dirname(abspath(__file__)) + '/' + pardir
     result = 0
 
     with open(f'{pd}/resources/Euler011.txt', 'r') as grid_file:

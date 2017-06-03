@@ -46,7 +46,7 @@ def euler008():
     """
 
     # Set project directory
-    pd = abspath(dirname(__file__)+'/'+pardir)
+    pd = dirname(abspath(__file__)) + '/' + pardir
     highest_product = 0
 
     # Get large number from file
