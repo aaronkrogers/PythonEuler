@@ -10,8 +10,8 @@ def euler013():
     one hundred 50-digit numbers located in resources/Euler013.txt
     """
     result = 0
-    with open(f'{RESOURCE_DIR}/Euler013.txt', 'r') as input:
-        for line in input:
+    with open(f'{RESOURCE_DIR}/Euler013.txt', 'r') as in_file:
+        for line in in_file:
             result += int(line.strip())
 
     return f'{str(result):.10}'
