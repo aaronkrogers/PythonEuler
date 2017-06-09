@@ -3,7 +3,7 @@
 from os.path import abspath, dirname, pardir
 from itertools import product
 import numpy as np
-
+from definitions import RESOURCE_DIR
 
 def euler011():
     """
@@ -14,10 +14,9 @@ def euler011():
     """
 
     # Set project directory
-    pd = dirname(abspath(__file__)) + '/' + pardir
     result = 0
 
-    with open(f'{pd}/resources/Euler011.txt', 'r') as grid_file:
+    with open(f'{RESOURCE_DIR}/Euler011.txt', 'r') as grid_file:
         grid = []
         for line in grid_file:
             grid.append([int(item) for item in line.split()])

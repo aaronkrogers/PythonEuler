@@ -3,6 +3,7 @@
 from os.path import abspath
 from os.path import pardir
 from os.path import dirname
+from definitions import RESOURCE_DIR
 
 
 def product(*args):
@@ -44,13 +45,9 @@ def euler008():
     have the greatest product.
     What is the value of this product?
     """
-
-    # Set project directory
-    pd = dirname(abspath(__file__)) + '/' + pardir
     highest_product = 0
-
     # Get large number from file
-    with open(pd+'/resources/Euler008.txt', 'r') as number_file:
+    with open(f'{RESOURCE_DIR}/Euler008.txt', 'r') as number_file:
         lines = [line.strip() for line in number_file.readlines()]
         big_num = ''.join(lines)
 
