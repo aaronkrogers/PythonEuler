@@ -12,12 +12,13 @@ def euler001():
     Return solution to projecteuler #1
     :return: int
     """
-    results = set()
+    result = 0
     for i in range(0, 1000, 3):
-        results.add(i)
+        result += i
     for i in range(0, 1000, 5):
-        results.add(i)
-    return sum(results)
+        if i % 3 != 0:
+            result += i
+    return result
 
 if __name__ == "__main__":
     print(euler001())
