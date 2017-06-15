@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
 
-from os.path import abspath
-from os.path import pardir
-from os.path import dirname
 from definitions import RESOURCE_DIR
 
 
