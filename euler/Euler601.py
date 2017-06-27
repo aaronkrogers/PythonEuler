@@ -11,17 +11,17 @@ def lcm(lst):
     return output
 
 
-def P(s, N):
+def p(s, N):
     if s == 1:
         return (N-1)//2
     else:
-        npk = lcm([_ for _ in range(2, s + 1)])
-        npo = lcm([_ for _ in range(2, s + 2)])
-        return (N-2) // npk - (N-2) // npo
+        x0 = lcm([_ for _ in range(2, s + 1)])
+        x1 = lcm([_ for _ in range(2, s + 2)])
+        return (N-2) // x0 - (N-2) // x1
 
 
 def euler601():
-    return sum(P(i, 4**i) for i in range(1, 31+1))
+    return sum(p(i, 4**i) for i in range(1, 31+1))
 
 
 if __name__ == "__main__":
