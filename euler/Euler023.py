@@ -11,7 +11,7 @@ def is_abundant(n):
     return result
 
 
-def euler021():
+def euler023():
     """
     --- Non-abundant sums ---
     Find the sum of all the positive integers which cannot be written as
