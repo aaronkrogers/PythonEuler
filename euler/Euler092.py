@@ -8,6 +8,13 @@ def square_digit_sum(num):
     return result
 
 
+def square_digit_chain(num):
+    yield num
+    while num not in (1, 89):
+        num = square_digit_sum(num)
+        yield num
+
+
 def euler092():
     """
     --- Square digit chains ---
@@ -24,26 +31,22 @@ def euler092():
 
     How many starting numbers below ten million will arrive at 89?
     """
-    known = {}
+    known = {1: 1, 89: 89}
     result = 0
 
-    for i in range(1, 10000000):
-        chain = [i]
-        link = i
-
-        while 1:
-            link = known.get(link, link)
-            if link in (1, 89):
+    for number in range(1, 10000000):
+        chain = []
+        for link in square_digit_chain(number):
+            if link in known:
+                known.update({l: known[link] for l in chain})
+                if known[link] == 89:
+                    result += 1
                 break
-            link = square_digit_sum(link)
-            chain.append(link)
-
-        if link == 89:
-            result += 1
-
-        known.update({n: link for n in chain})
+            else:
+                chain.append(link)
 
     return result
+
 
 if __name__ == '__main__':
     print(euler092())
