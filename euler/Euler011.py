@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
-from os.path import abspath, dirname, pardir
 from itertools import product
 import numpy as np
 from definitions import RESOURCE_DIR
+
 
 def euler011():
     """
