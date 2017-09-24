@@ -4,13 +4,14 @@ from itertools import count
 from pyprimes import primes_below
 
 
-def euler005(upper_bound=20):
-    """
-    ---Smallest multiple---
-    2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+def euler005(upper_bound: int = 20) -> int:
+    """Smallest multiple
 
-    What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
-    :return: int
+    2520 is the smallest number that can be divided by each of the numbers
+    from 1 to 10 without any remainder.
+
+    What is the smallest positive number that is evenly divisible by all
+    of the numbers from 1 to 20?
     """
     result = 1
     primes = primes_below(upper_bound)
