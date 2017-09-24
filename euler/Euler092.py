@@ -1,18 +1,39 @@
 #!/usr/bin/env python3
 
 
-def square_digit_sum(num):
-    result = 0
-    for n in str(num):
-        result += int(n) ** 2
-    return result
+class Chain:
+    def __init__(self):
+        self.known = {1: 1, 89: 89}
 
+    def update(self, values, chain_end):
+        for val in values:
+            self.known[val] = chain_end
 
-def square_digit_chain(num):
-    yield num
-    while num not in (1, 89):
-        num = square_digit_sum(num)
+    @staticmethod
+    def square_digit_sum(num):
+        result = 0
+        for n in str(num):
+            result += int(n) ** 2
+        return result
+
+    def square_digit_chain(self, num):
         yield num
+        while num not in (1, 89):
+            num = self.square_digit_sum(num)
+            yield num
+
+    def chain_end(self, num):
+        tmp_chain = set()
+        for val in self.square_digit_chain(num):
+            if val in self.known:
+                result = self.known[val]
+                self.update(tmp_chain, result)
+                return result
+            else:
+                tmp_chain.add(val)
+
+    def __call__(self, num):
+        return self.chain_end(num)
 
 
 def euler092():
@@ -31,20 +52,11 @@ def euler092():
 
     How many starting numbers below ten million will arrive at 89?
     """
-    known = {1: 1, 89: 89}
+    chain = Chain()
     result = 0
-
-    for number in range(1, 10000000):
-        chain = []
-        for link in square_digit_chain(number):
-            if link in known:
-                known.update({l: known[link] for l in chain})
-                if known[link] == 89:
-                    result += 1
-                break
-            else:
-                chain.append(link)
-
+    for number in range(1, 10_000_000):
+        if chain(number) == 89:
+            result += 1
     return result
 
 
