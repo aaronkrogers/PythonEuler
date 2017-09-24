@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-def fibonacci_generator(end=None) -> int:
+def fibonacci_generator(end=None):
     """Generate the fibonacci numbers from 1 to end
     if end is not given it will default to None and
     this generator will continue indefinitely
