@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-def euler001():
+def euler001() -> int:
     """
     --Multiples of 3 and 5--
     If we list all the natural numbers below 10 that are multiples of 3 or 5,
@@ -9,16 +9,17 @@ def euler001():
 
     Find the sum of all the multiples of 3 or 5 below 1000.
     
-    Return solution to projecteuler #1
-    :return: int
+    Return solution to project euler #1
     """
-    result = 0
+    values = set()
     for i in range(0, 1000, 3):
-        result += i
+        # Add all numbers divisible by 3 to set of values
+        values.add(i)
     for i in range(0, 1000, 5):
-        if i % 3 != 0:
-            result += i
-    return result
+        # Add all numbers divisible by 5 to set of values
+        values.add(i)
+    return sum(values)
+
 
 if __name__ == "__main__":
     print(euler001())
