@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 
 
-def is_bin_palindrome(num):
+def is_bin_palindrome(num: int) -> bool:
     binary = bin(num)[2:]
     return binary == binary[::-1]
 
 
-def is_palindrome(num):
+def is_palindrome(num: int) -> bool:
     num = str(num)
     return num == num[::-1]
 
 
-def euler036():
+def euler036() -> int:
     """Double-base palindromes
     The decimal number, 585 = 10010010012 (binary), is
     palindromic in both bases.
