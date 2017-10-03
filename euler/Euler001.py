@@ -11,7 +11,7 @@ def euler001() -> int:
     
     Return solution to project euler #1
     """
-    values = set()
+    values = set()  # Using a set to eliminate duplicate values
     for i in range(0, 1000, 3):
         # Add all numbers divisible by 3 to set of values
         values.add(i)
