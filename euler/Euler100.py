@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
 
-from math import sqrt
-from decimal import Decimal
-
-
 def euler100():
     """Arranged Probability
     If a box contains twenty-one coloured discs, composed of fifteen
@@ -22,11 +18,11 @@ def euler100():
     n = 21
     target = 10**12
     while n < target:
-        btemp = 3*b + 2*n - 2
-        ntemp = 4*b + 3*n - 3
+        b_temp = 3*b + 2*n - 2
+        n_temp = 4*b + 3*n - 3
 
-        b = btemp
-        n = ntemp
+        b = b_temp
+        n = n_temp
     return b
 
 
