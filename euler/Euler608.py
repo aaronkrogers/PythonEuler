@@ -6,12 +6,7 @@ I will come back to this later"""
 from pyprimes import factorise
 from itertools import product
 from math import factorial as fact
-
-
-def count_factors(num):
-    """Return the numbers of divisors for num
-    """
-    return prod(f[1]+1 for f in factorise(num))
+from time import time
 
 
 def prod(lst):
@@ -33,11 +28,27 @@ def divisors(num):
     yield from (powered(primes, es) for es in product(*exponents))
 
 
+def divisor_count(num):
+    return prod(a + 1 for p, a in factorise(num))
+
+
 def D(m, n):
     result = 0
-    for d, k in product(divisors(m), range(1, n+1)):
-        result += count_factors(d*k)
+    start = time()
+    c = 0
+    dc = divisor_count(m)
+    for d in divisors(m):
+        for k in range(1, n+1):
+            c += 1
+            if c % 1000 == 0:
+                print(
+                        f"\r{c/dc*100:.2f}% done after "
+                        f"{(time()-start)//60} minutes",
+                        end=''
+                )
+            result += divisor_count(d*k)
     return result - 1
 
 
-print(D(fact(400), 10**12))
+if __name__ == "__main__":
+    print(D(fact(400), 10**14))
