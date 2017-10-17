@@ -17,10 +17,15 @@ def totient(n):
     """Calculate and return number of coprimes to n
     using Euler's totient function
     """
-    return n * product((1-1/p) for p in set(factors(n)))
+    return int(n * product((1-1/p) for p in set(factors(n))))
 
 
-result = 0
-for i in range(2, 1_000_001):
-    result += totient(i)
-print(result)
+def euler072():
+    result = 0
+    for i in range(2, 1_000_001):
+        result += totient(i)
+    return result
+
+
+if __name__ == "__main__":
+    print(euler072())
