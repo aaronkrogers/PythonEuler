@@ -7,14 +7,15 @@ from itertools import permutations
 def euler040():
     """Pandigital Prime
     We shall say that an n-digit number is pandigital if it makes
-    use of all the digits 1 to n exactly once. For example, 2143 is a 4-digit pandigital and is also prime.
+    use of all the digits 1 to n exactly once. For example, 2143 is a 4-digit
+    pandigital and is also prime.
 
     What is the largest n-digit pandigital prime that exists?
     """
-    for length in range(10, 1, -1):
+    for end in range(9, 1, -1):
         # Yeah I'm kind of cheating by not testing 10 digit numbers
         # I'm not yet sure how to avoid that in an efficient manner
-        for perm in permutations((str(d) for d in range(9, -1, -1)), 9):
+        for perm in permutations((str(d) for d in range(end, 0, -1)), end):
                 number = int(''.join(perm))
                 if isprime(number):
                     return number
