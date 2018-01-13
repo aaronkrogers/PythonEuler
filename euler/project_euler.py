@@ -5,8 +5,4 @@ RESOURCE_DIR = ROOT_DIR + '/resources'
 
 
 def list2int(array):
-    result = 0
-    for a in array:
-        result *= 10
-        result += a
-    return result
+    return int(''.join(str(item) for item in array))
