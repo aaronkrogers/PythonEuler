@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from math import sqrt
-from definitions import RESOURCE_DIR
+from project_euler import RESOURCE_DIR
 
 
 def is_triangle(num):

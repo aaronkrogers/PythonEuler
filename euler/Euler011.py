@@ -2,7 +2,7 @@
 
 from itertools import product
 import numpy as np
-from definitions import RESOURCE_DIR
+from project_euler import RESOURCE_DIR
 
 
 def euler011():

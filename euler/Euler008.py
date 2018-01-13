@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from definitions import RESOURCE_DIR
+from project_euler import RESOURCE_DIR
 
 
 def product(*args):
