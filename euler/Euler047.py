@@ -6,12 +6,12 @@ from itertools import count
 
 def euler046():
     for C in count(1):
-        for i in range(3):
-            if len(list(pyprimes.factorise(C+i))) != 3:
+        for i in range(4):
+            if len(list(pyprimes.factorise(C+i))) != 4:
                 break
         else:
-            return
+            return C
 
 
 if __name__ == "__main__":
-    euler046()
+    print(euler046())
