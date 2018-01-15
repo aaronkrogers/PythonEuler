@@ -16,7 +16,7 @@ def euler046() -> int:
     of a prime and twice a square?
     """
     # generator of non-even composite numbers
-    composites = (i for i in count(3, step=2) if isprime(i))
+    composites = (i for i in count(3, step=2) if not isprime(i))
     for C in composites:
         for x in range(1, int(sqrt(C/2))+1):
             p = C - (2 * x**2)
@@ -24,7 +24,6 @@ def euler046() -> int:
             if isprime(p):
                 break
         else:
-            print(x, p)
             return C
 
 
