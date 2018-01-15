@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
-from itertools import count
+from itertools import count, takewhile
 from pyprimes import isprime
+from math import sqrt
 
 
 def euler046() -> int:
@@ -15,15 +16,15 @@ def euler046() -> int:
     of a prime and twice a square?
     """
     # generator of non-even composite numbers
-    composites = (i for i in count(3, step=2) if not isprime(i))
+    composites = (i for i in count(3, step=2) if isprime(i))
     for C in composites:
-        x = 1
-        while (2 * x**2) < C:
-            P = C - (2 * x**2)
+        for x in range(1, int(sqrt(C/2))+1):
+            p = C - (2 * x**2)
             x += 1
-            if isprime(P):
+            if isprime(p):
                 break
         else:
+            print(x, p)
             return C
 
 
