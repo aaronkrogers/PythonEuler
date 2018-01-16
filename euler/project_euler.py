@@ -1,3 +1,6 @@
+# This module is to contain constants and tools to 
+# be reused throughout my Project Euler journey
+
 import os
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
