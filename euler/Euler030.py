@@ -46,5 +46,6 @@ def euler030():
                     output += sum(v)
                 return output
 
+
 if __name__ == "__main__":
     print(euler030())
