@@ -41,7 +41,7 @@ def euler011():
             ny = range(y, y-4, -1)
             round_results.append(grid[nx, ny])
 
-        if y < grid_size - 3 and x < grid_size-3:
+        if y < grid_size-3 and x < grid_size-3:
             # Test for right-down diagonal
             nx = range(x, x+4)
             ny = range(y, y+4)
